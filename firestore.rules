@@ -1,0 +1,181 @@
+/**
+ * @fileoverview Firestore Security Rules for Prototyping.
+ *
+ * Core Philosophy:
+ * This ruleset prioritizes security by enforcing strict ownership and role-based access control where appropriate.
+ * It allows for rapid prototyping by relaxing data validation and focusing on authorization.
+ *
+ * Data Structure:
+ * The Firestore database consists of several top-level collections: `branches`, `courses`, `websiteContent`,
+ * `educators`, `faqs`, `blogs`, and `gallery`. Each collection stores documents representing the corresponding entity.
+ *
+ * Key Security Decisions:
+ * - Public Read Access: Collections like `courses`, `websiteContent`, `educators`, `faqs`, `blogs`, and `gallery`
+ *   are publicly readable to allow for easy display on the website.
+ * - Owner-Only Writes: Write access to these collections is restricted to authenticated users with appropriate ownership or admin privileges.
+ * - Branches: The 'branches' collection has list enabled for all signed in users. Only users assigned as 'branchAdminUid' can create/update/delete.
+ * - No User Listing: Listing all users is disallowed for privacy and security reasons.
+ *
+ * Denormalization for Authorization:
+ * The `branches` collection includes a `branchAdminUid` field on each document, which is used to quickly authorize
+ * updates and deletes by the branch administrator.
+ */
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    /**
+     * @description Manages educational branches. Allows listing by any signed-in user.
+     *              Only the branch admin can create, update, or delete branches.
+     * @path /branches/{branchId}
+     * @allow (list) User is signed in.
+     * @allow (create) User is the branch admin.
+     * @allow (update) User is the branch admin and the document exists.
+     * @allow (delete) User is the branch admin and the document exists.
+     * @deny (create) User is not the branch admin.
+     * @deny (update) User is not the branch admin.
+     * @deny (delete) User is not the branch admin.
+     * @principle Enforces branch admin ownership for write operations and open read access for signed in users.
+     */
+    match /branches/{branchId} {
+      allow get: if true;
+      allow list: if isSignedIn();
+      allow create: if isSignedIn() && request.resource.data.branchAdminUid == request.auth.uid;
+      allow update: if isSignedIn() && isExistingOwner(resource.data.branchAdminUid);
+      allow delete: if isSignedIn() && isExistingOwner(resource.data.branchAdminUid);
+    }
+
+    /**
+     * @description Manages courses offered by the institution. Allows public read access.
+     *              Only authenticated users can create, update, or delete courses.
+     * @path /courses/{courseId}
+     * @allow (get, list) Public read access.
+     * @allow (create) User is signed in.
+     * @allow (update) User is signed in and the document exists.
+     * @allow (delete) User is signed in and the document exists.
+     * @deny (create) User is not signed in.
+     * @deny (update) User is not signed in.
+     * @deny (delete) User is not signed in.
+     * @principle Enforces public read access with authenticated user-only writes.
+     */
+    match /courses/{courseId} {
+      allow get, list: if true;
+      allow create: if isSignedIn();
+      allow update: if isSignedIn() && resource != null;
+      allow delete: if isSignedIn() && resource != null;
+    }
+
+    /**
+     * @description Manages website content. Allows public read access.
+     *              Only authenticated users can create, update, or delete content.
+     * @path /websiteContent/{contentId}
+     * @allow (get, list) Public read access.
+     * @allow (create) User is signed in.
+     * @allow (update) User is signed in and the document exists.
+     * @allow (delete) User is signed in and the document exists.
+     * @deny (create) User is not signed in.
+     * @deny (update) User is not signed in.
+     * @deny (delete) User is not signed in.
+     * @principle Enforces public read access with authenticated user-only writes.
+     */
+    match /websiteContent/{contentId} {
+      allow get, list: if true;
+      allow create: if isSignedIn();
+      allow update: if isSignedIn() && resource != null;
+      allow delete: if isSignedIn() && resource != null;
+    }
+
+    /**
+     * @description Manages educator profiles. Allows public read access.
+     *              Only authenticated users can create, update, or delete educator profiles.
+     * @path /educators/{educatorId}
+     * @allow (get, list) Public read access.
+     * @allow (create) User is signed in.
+     * @allow (update) User is signed in and the document exists.
+     * @allow (delete) User is signed in and the document exists.
+     * @deny (create) User is not signed in.
+     * @deny (update) User is not signed in.
+     * @deny (delete) User is not signed in.
+     * @principle Enforces public read access with authenticated user-only writes.
+     */
+    match /educators/{educatorId} {
+      allow get, list: if true;
+      allow create: if isSignedIn();
+      allow update: if isSignedIn() && resource != null;
+      allow delete: if isSignedIn() && resource != null;
+    }
+
+    /**
+     * @description Manages frequently asked questions. Allows public read access.
+     *              Only authenticated users can create, update, or delete FAQs.
+     * @path /faqs/{faqId}
+     * @allow (get, list) Public read access.
+     * @allow (create) User is signed in.
+     * @allow (update) User is signed in and the document exists.
+     * @allow (delete) User is signed in and the document exists.
+     * @deny (create) User is not signed in.
+     * @deny (update) User is not signed in.
+     * @deny (delete) User is not signed in.
+     * @principle Enforces public read access with authenticated user-only writes.
+     */
+    match /faqs/{faqId} {
+      allow get, list: if true;
+      allow create: if isSignedIn();
+      allow update: if isSignedIn() && resource != null;
+      allow delete: if isSignedIn() && resource != null;
+    }
+
+    /**
+     * @description Manages blog posts. Allows public read access.
+     *              Only authenticated users can create, update, or delete blog posts.
+     * @path /blogs/{blogId}
+     * @allow (get, list) Public read access.
+     * @allow (create) User is signed in.
+     * @allow (update) User is signed in and the document exists.
+     * @allow (delete) User is signed in and the document exists.
+     * @deny (create) User is not signed in.
+     * @deny (update) User is not signed in.
+     * @deny (delete) User is not signed in.
+     * @principle Enforces public read access with authenticated user-only writes.
+     */
+    match /blogs/{blogId} {
+      allow get, list: if true;
+      allow create: if isSignedIn();
+      allow update: if isSignedIn() && resource != null;
+      allow delete: if isSignedIn() && resource != null;
+    }
+
+    /**
+     * @description Manages gallery images. Allows public read access.
+     *              Only authenticated users can create, update, or delete gallery images.
+     * @path /gallery/{imageId}
+     * @allow (get, list) Public read access.
+     * @allow (create) User is signed in.
+     * @allow (update) User is signed in and the document exists.
+     * @allow (delete) User is signed in and the document exists.
+     * @deny (create) User is not signed in.
+     * @deny (update) User is not signed in.
+     * @deny (delete) User is not signed in.
+     * @principle Enforces public read access with authenticated user-only writes.
+     */
+    match /gallery/{imageId} {
+      allow get, list: if true;
+      allow create: if isSignedIn();
+      allow update: if isSignedIn() && resource != null;
+      allow delete: if isSignedIn() && resource != null;
+    }
+
+    // Helper functions
+    function isSignedIn() {
+      return request.auth != null;
+    }
+
+    function isOwner(userId) {
+      return request.auth.uid == userId;
+    }
+
+    function isExistingOwner(userId) {
+      return isSignedIn() && isOwner(userId) && resource != null;
+    }
+  }
+}

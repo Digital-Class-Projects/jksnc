@@ -1,0 +1,71 @@
+
+{
+  "rules": {
+    "websiteContent": {
+      ".read": true,
+      ".write": "auth != null"
+    },
+    "chooseUs": {
+      ".read": true,
+      ".write": "auth != null"
+    },
+    "dataCounters": {
+      ".read": true,
+      ".write": "auth != null"
+    },
+    "courses": {
+      ".read": true,
+      ".write": "auth != null"
+    },
+    "educators": {
+      ".read": true,
+      ".write": "auth != null"
+    },
+    "faqs": {
+      ".read": true,
+      ".write": "auth != null"
+    },
+    "blogs": {
+      ".read": true,
+      ".write": "auth != null"
+    },
+    "gallery": {
+      ".read": true,
+      ".write": "auth != null"
+    },
+    "notices": {
+      ".read": true,
+      ".write": "auth != null"
+    },
+    "students": {
+      ".read": "auth != null",
+      ".write": "auth != null",
+      ".indexOn": ["uid", "branchId"]
+    },
+    "staff": {
+      ".read": "auth != null",
+      ".write": "auth != null",
+      ".indexOn": "uid"
+    },
+    "branches": {
+      ".read": "auth != null",
+      ".write": "auth != null",
+      ".indexOn": "branchAdminUid"
+    },
+    "feeReceipts": {
+      ".read": "auth != null",
+      ".write": "auth != null",
+      ".indexOn": "status"
+    },
+    "admissionEnquiries": {
+      ".read": "auth != null",
+      ".write": "auth != null",
+      ".indexOn": "branch"
+    },
+    "generatedCertificates": {
+      ".read": "auth != null",
+      ".write": "auth != null",
+      ".indexOn": "studentId"
+    }
+  }
+}

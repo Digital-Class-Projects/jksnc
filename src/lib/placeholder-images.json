@@ -1,0 +1,34 @@
+{
+  "placeholderImages": [
+    {
+      "id": "user-avatar-1",
+      "description": "User avatar",
+      "imageUrl": "https://picsum.photos/seed/1/100/100",
+      "imageHint": "person face"
+    },
+    {
+      "id": "user-avatar-2",
+      "description": "User avatar",
+      "imageUrl": "https://picsum.photos/seed/2/100/100",
+      "imageHint": "person face"
+    },
+    {
+      "id": "logo",
+      "description": "Application logo",
+      "imageUrl": "https://picsum.photos/seed/logo/100/100",
+      "imageHint": "abstract logo"
+    },
+    {
+      "id": "gallery-1",
+      "description": "Gallery image 1",
+      "imageUrl": "https://picsum.photos/seed/g1/600/400",
+      "imageHint": "modern building"
+    },
+    {
+      "id": "gallery-2",
+      "description": "Gallery image 2",
+      "imageUrl": "https://picsum.photos/seed/g2/600/400",
+      "imageHint": "students classroom"
+    }
+  ]
+}
