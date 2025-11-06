@@ -225,7 +225,7 @@ export default function CertificatePreviewPage() {
                         <div className="absolute font-['Times_New_Roman'] " style={{ top: '552px', left: '330px', fontSize: '16px', fontFamily: 'monospace' }}>{certificate.marksPercentage}%</div>
                         <div className="absolute font-['Times_New_Roman']" style={{ top: '880px', left: '330px', fontSize: '20px', width: '500px', fontFamily: 'monospace' }}>{certificate.marksInWords}</div>
                         <div className="absolute font-['Times_New_Roman']" style={{ bottom: '115px', left: '200px', fontSize: '20px', fontFamily: 'monospace' }}>{certificate.preparedBy}</div>
-                        <div className="absolute font-['Times_New_Roman']" style={{ bottom: '65px', right: '520px', fontSize: '20px', fontFamily: 'monospace' }}>{certificate.checkedBy}</div>
+                        <div className="absolute font-['Times_New_Roman']" style={{ bottom: '65px', right: '50px', fontSize: '20px', fontFamily: 'monospace' }}>{certificate.checkedBy}</div>
                      </>
                 )}
             </div>
