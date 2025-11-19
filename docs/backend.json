@@ -1,0 +1,151 @@
+
+{
+  "entities": {
+    "branch": {
+      "title": "Branch",
+      "description": "Represents an educational branch.",
+      "type": "object",
+      "properties": {
+        "name": { "type": "string", "description": "The name of the branch." },
+        "city": { "type": "string", "description": "The city where the branch is located." },
+        "address": { "type": "string", "description": "The full address of the branch." },
+        "branchAdminUid": { "type": "string", "description": "The Firebase UID of the admin for this branch." }
+      },
+      "required": ["name", "city", "branchAdminUid"]
+    },
+    "course": {
+      "title": "Course",
+      "description": "Represents a course offered by the institution.",
+      "type": "object",
+      "properties": {
+        "courseImage": { "type": "string", "description": "URL of the course image." },
+        "courseName": { "type": "string", "description": "Name of the course." },
+        "courseType": { "type": "string", "description": "Type of the course (e.g., Online, Offline)." },
+        "description": { "type": "string", "description": "A full overview or description of the course." },
+        "language": { "type": "string", "description": "Language the course is taught in." },
+        "certificate": { "type": "string", "enum": ["yes", "no"], "description": "Whether a certificate is provided upon completion." },
+        "sellingPrice": { "type": "string", "description": "The selling price of the course." },
+        "discount": { "type": "string", "description": "Discount percentage on the course." },
+        "show": { "type": "boolean", "description": "Whether the course is visible on the website." }
+      },
+      "required": ["courseName", "courseType", "description", "language", "certificate", "sellingPrice"]
+    },
+    "websiteContent": {
+      "title": "Website Content",
+      "description": "Holds all editable content for the public website.",
+      "type": "object",
+      "properties": {
+        "homePage": {
+          "type": "object",
+          "properties": {
+            "headerText": { "type": "string" },
+            "headerDescription": { "type": "string" }
+          }
+        }
+      }
+    },
+    "educator": {
+      "title": "Educator",
+      "description": "Represents an educator or instructor.",
+      "type": "object",
+      "properties": {
+        "name": { "type": "string", "description": "The full name of the educator." },
+        "title": { "type": "string", "description": "The educator's title or specialization." },
+        "bio": { "type": "string", "description": "A short biography of the educator." },
+        "imageUrl": { "type": "string", "description": "URL of the educator's profile picture." }
+      },
+      "required": ["name", "title", "bio"]
+    },
+    "faq": {
+      "title": "FAQ",
+      "description": "Represents a frequently asked question and its answer.",
+      "type": "object",
+      "properties": {
+        "question": { "type": "string", "description": "The question being asked." },
+        "answer": { "type": "string", "description": "The answer to the question." }
+      },
+      "required": ["question", "answer"]
+    },
+    "blog": {
+      "title": "Blog Post",
+      "description": "Represents a single blog post.",
+      "type": "object",
+      "properties": {
+        "title": { "type": "string", "description": "The title of the blog post." },
+        "content": { "type": "string", "description": "The full content of the blog post in HTML or Markdown." },
+        "authorName": { "type": "string", "description": "The name of the post's author." },
+        "imageUrl": { "type": "string", "description": "URL of the blog post's header image." },
+        "createdAt": { "type": "string", "format": "date-time", "description": "Timestamp when the post was created." }
+      },
+      "required": ["title", "content", "authorName"]
+    },
+    "galleryImage": {
+      "title": "Gallery Image",
+      "description": "Represents an image in the website gallery.",
+      "type": "object",
+      "properties": {
+        "imageUrl": { "type": "string", "description": "The URL of the gallery image." },
+        "caption": { "type": "string", "description": "An optional caption for the image." }
+      },
+      "required": ["imageUrl"]
+    },
+    "notice": {
+      "title": "Notice",
+      "description": "Represents a notice or announcement.",
+      "type": "object",
+      "properties": {
+        "topic": { "type": "string", "description": "The topic of the notice." },
+        "notice": { "type": "string", "description": "The main content of the notice." },
+        "expiryDate": { "type": "string", "format": "date", "description": "The date the notice expires." },
+        "createdAt": { "type": "string", "format": "date-time", "description": "Timestamp when the notice was created." }
+      },
+      "required": ["topic", "notice", "expiryDate"]
+    },
+    "generatedCertificate": {
+      "title": "Generated Certificate",
+      "description": "Represents a certificate that has been generated for a student.",
+      "type": "object",
+      "properties": {
+        "studentId": { "type": "string", "description": "The Firebase UID of the student." },
+        "branchId": { "type": "string", "description": "The ID of the branch the student belongs to." },
+        "certificateType": { "type": "string", "description": "The type of certificate (e.g., Migration, Completion)." },
+        "issueDate": { "type": "string", "format": "date-time", "description": "Timestamp when the certificate was issued." },
+        "studentName": { "type": "string" },
+        "certificateDetails": { "type": "object", "description": "Snapshot of student data at time of creation." }
+      },
+      "required": ["studentId", "branchId", "certificateType", "issueDate"]
+    },
+    "certificateApplication": {
+      "title": "Certificate Application",
+      "description": "A student's application for a certificate.",
+      "type": "object",
+      "properties": {
+        "studentUid": { "type": "string" },
+        "fullName": { "type": "string" },
+        "enrollmentNumber": { "type": "string" },
+        "courseName": { "type": "string" },
+        "academicSession": { "type": "string" },
+        "submissionDate": { "type": "string", "format": "date-time" },
+        "status": { "type": "string", "enum": ["Pending", "Approved", "Declined"] }
+      },
+       "required": ["studentUid", "fullName", "submissionDate", "status"]
+    },
+    "nocApplication": {
+        "title": "NOC Application",
+        "description": "A student's application for a No Objection Certificate.",
+        "type": "object",
+        "properties": {
+            "studentUid": { "type": "string" },
+            "fullName": { "type": "string" },
+            "nocPurpose": { "type": "string" },
+            "propertyDetails": { "type": "string" },
+            "submittedAt": { "type": "string", "format": "date-time" },
+            "status": { "type": "string", "enum": ["Pending", "Approved", "Declined"] }
+        },
+        "required": ["studentUid", "fullName", "submittedAt", "status"]
+    }
+  },
+  "auth": {
+    "providers": []
+  }
+}

@@ -1,0 +1,12 @@
+diff --git a/node_modules/react-canvas-draw/package.json b/node_modules/react-canvas-draw/package.json
+index 5b83987..17c93e4 100644
+--- a/node_modules/react-canvas-draw/package.json
++++ b/node_modules/react-canvas-draw/package.json
+@@ -51,6 +51,6 @@
+     "start": "react-scripts start"
+   },
+   "peerDependencies": {
+-    "react": "16.x || 17.x"
++    "react": "16.x || 17.x || 18.x"
+   }
+ }

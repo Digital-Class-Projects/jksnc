@@ -1,0 +1,166 @@
+{
+  "placeholderImages": [
+    {
+      "id": "user-avatar-1",
+      "description": "User avatar",
+      "imageUrl": "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?q=80&w=100&h=100&fit=crop&ixlib=rb-4.0.3",
+      "imageHint": "person face"
+    },
+    {
+      "id": "logo",
+      "description": "Application logo",
+      "imageUrl": "https://ik.imagekit.io/rgazxzsxr/68c4095c2a95d.png?updatedAt=1761819080151",
+      "imageHint": "medical council logo"
+    },
+    {
+      "id": "hero-illustration",
+      "description": "Illustration of a person learning from large books",
+      "imageUrl": "https://ik.imagekit.io/rgazxzsxr/images%20(1).jpeg?updatedAt=1761901255937",
+      "imageHint": "education learning"
+    },
+    {
+      "id": "hero-students-main",
+      "description": "Two students smiling, ready for online learning",
+      "imageUrl": "https://ik.imagekit.io/rgazxzsxr/01.png?updatedAt=1761904136132",
+      "imageHint": "students online"
+    },
+    {
+      "id": "hero-shape-1",
+      "description": "Decorative background shape",
+      "imageUrl": "https://ik.imagekit.io/rgazxzsxr/banner-shape01.svg?updatedAt=1761904136680",
+      "imageHint": "abstract shape"
+    },
+    {
+      "id": "hero-shape-2",
+      "description": "Decorative background shape",
+      "imageUrl": "https://ik.imagekit.io/rgazxzsxr/banner-shape02.svg?updatedAt=1761904136686",
+      "imageHint": "abstract shape"
+    },
+    {
+      "id": "hero-book-icon",
+      "description": "Floating book icon",
+      "imageUrl": "https://ik.imagekit.io/rgazxzsxr/06.png?updatedAt=1761904136575",
+      "imageHint": "book icon"
+    },
+    {
+      "id": "hero-lightbulb-icon",
+      "description": "Floating lightbulb icon",
+      "imageUrl": "https://ik.imagekit.io/rgazxzsxr/07.png?updatedAt=1761904136559",
+      "imageHint": "idea lightbulb"
+    },
+    {
+      "id": "student-avatar-1",
+      "description": "Avatar of a student",
+      "imageUrl": "https://ik.imagekit.io/rgazxzsxr/02.png?updatedAt=1761904136561",
+      "imageHint": "student avatar"
+    },
+    {
+      "id": "student-avatar-2",
+      "description": "Avatar of another student",
+      "imageUrl": "https://ik.imagekit.io/rgazxzsxr/02.png?updatedAt=1761904136561",
+      "imageHint": "student avatar"
+    },
+    {
+      "id": "hero-student-listening",
+      "description": "Image of a student with headphones listening",
+      "imageUrl": "https://ik.imagekit.io/rgazxzsxr/christina-wocintechchat-com-FPQlXQtjkqU-unsplash.jpg?updatedAt=1762137682226",
+      "imageHint": "student learning"
+    },
+    {
+      "id": "about-us-campus",
+      "description": "Image representing students reading books",
+      "imageUrl": "https://ik.imagekit.io/rgazxzsxr/md-duran-1VqHRwxcCCw-unsplash.jpg?updatedAt=1761901477403",
+      "imageHint": "students reading"
+    },
+    {
+      "id": "mission-students",
+      "description": "Image of graduating students for the mission section",
+      "imageUrl": "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=600&h=450&fit=crop&ixlib=rb-4.0.3",
+      "imageHint": "graduation students"
+    },
+    {
+      "id": "about-banner",
+      "description": "Banner image for the about us page",
+      "imageUrl": "https://images.unsplash.com/photo-1491975474562-1f4e30bc9468?q=80&w=1920&h=500&fit=crop&ixlib=rb-4.0.3",
+      "imageHint": "library books"
+    },
+    {
+      "id": "about-image",
+      "description": "Content image for the about us page",
+      "imageUrl": "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=600&h=450&fit=crop&ixlib=rb-4.0.3",
+      "imageHint": "team meeting"
+    },
+    {
+      "id": "blog-post-header",
+      "description": "Default header image for blog posts",
+      "imageUrl": "https://images.unsplash.com/photo-1499750310107-5fef28a66643?q=80&w=600&h=400&fit=crop&ixlib=rb-4.0.3",
+      "imageHint": "article header"
+    },
+    {
+      "id": "educator-portrait",
+      "description": "Default portrait for an educator",
+      "imageUrl": "https://images.unsplash.com/photo-1580894742597-87bc8789db3d?q=80&w=200&h=200&fit=crop&ixlib=rb-4.0.3",
+      "imageHint": "educator portrait"
+    },
+    {
+      "id": "gallery-event",
+      "description": "Default image for a gallery event",
+      "imageUrl": "https://images.unsplash.com/photo-1511795409834-ef04bbd51622?q=80&w=400&h=400&fit=crop&ixlib=rb-4.0.3",
+      "imageHint": "event photo"
+    },
+    {
+      "id": "course-thumbnail",
+      "description": "Default thumbnail for a course",
+      "imageUrl": "https://images.unsplash.com/photo-1542831371-29b0f74f9713?q=80&w=400&h=250&fit=crop&ixlib=rb-4.0.3",
+      "imageHint": "programming code"
+    },
+    {
+      "id": "testimonial-photo",
+      "description": "A photo of a happy student for the testimonials section",
+      "imageUrl": "https://ik.imagekit.io/rgazxzsxr/pexels-emily-ranquist-493228-1205651.jpg?updatedAt=1761901560724",
+      "imageHint": "student portrait"
+    },
+    {
+      "id": "learning-circle-students",
+      "description": "Image of children in a circle with text overlay",
+      "imageUrl": "https://ik.imagekit.io/rgazxzsxr/h2-image-600x617.jpg?updatedAt=1761903101462",
+      "imageHint": "children learning"
+    },
+    {
+      "id": "uni-logo-1",
+      "description": "University logo 1",
+      "imageUrl": "https://ik.imagekit.io/rgazxzsxr/images-removebg-preview.png?updatedAt=1762138249019",
+      "imageHint": "university logo"
+    },
+    {
+      "id": "uni-logo-2",
+      "description": "University logo 2",
+      "imageUrl": "https://ik.imagekit.io/rgazxzsxr/images__1_-removebg-preview.png?updatedAt=1762138248981",
+      "imageHint": "university logo"
+    },
+    {
+      "id": "uni-logo-3",
+      "description": "University logo 3",
+      "imageUrl": "https://ik.imagekit.io/rgazxzsxr/images__2_-removebg-preview.png?updatedAt=1762138248967",
+      "imageHint": "university logo"
+    },
+    {
+      "id": "uni-logo-4",
+      "description": "University logo 4",
+      "imageUrl": "https://ik.imagekit.io/rgazxzsxr/unnamed-removebg-preview.png?updatedAt=1762138249027",
+      "imageHint": "university logo"
+    },
+    {
+      "id": "uni-logo-5",
+      "description": "University logo 5",
+      "imageUrl": "https://ik.imagekit.io/rgazxzsxr/download-removebg-preview.png?updatedAt=1762138249007",
+      "imageHint": "university logo"
+    },
+    {
+      "id": "uni-logo-6",
+      "description": "University logo 6",
+      "imageUrl": "https://ik.imagekit.io/rgazxzsxr/download__1_-removebg-preview.png?updatedAt=1762138249219",
+      "imageHint": "university logo"
+    }
+  ]
+}

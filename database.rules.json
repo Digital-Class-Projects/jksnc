@@ -1,0 +1,9 @@
+{
+  "rules": {
+    "branches": {
+      ".indexOn": "branchAdminUid"
+    },
+    ".read": "auth != null",
+    ".write": "auth != null"
+  }
+}
